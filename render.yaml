@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: subscription-tracker
+    env: node
+    plan: free
+    buildCommand: yarn install
+    startCommand: yarn start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000

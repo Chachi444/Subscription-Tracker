@@ -31,10 +31,11 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen(PORT, async () => {
-  console.log(`Server is listening on http://localhost:${PORT}`);
-
- await connectToDatabase();
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
+
+// Connect to database when the application starts
+connectToDatabase().catch(console.error);
 
 export default app;
